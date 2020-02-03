@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthguardService } from './services/authguard.service';
+import { AuthGuardService } from './services/authguard.service';
+import { AuthService } from './services/auth.service';
+import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component';
+
+
 
 
 
@@ -12,11 +16,13 @@ import { AuthguardService } from './services/authguard.service';
   ],
   exports : [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    AuthCallbackComponent
   ],
   providers: [
-    AuthguardService
+    AuthGuardService,
+    AuthService
   ],
-  declarations: [],
+  declarations: [AuthCallbackComponent],
 })
 export class SharedModule { }
