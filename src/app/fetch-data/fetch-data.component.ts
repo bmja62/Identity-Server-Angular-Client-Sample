@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './fetch-data.component.html',
   styleUrls: ['./fetch-data.component.less']
 })
-export class FetchDataComponent{
+export class FetchDataComponent {
 
   public forecasts: WeatherForecast[];
 

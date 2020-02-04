@@ -8,13 +8,12 @@ import { AuthGuardService } from './shared/services/authguard.service';
 import { AuthCallbackComponent } from './shared/components/auth-callback/auth-callback.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'fetchData', component: FetchDataComponent },
   { path: 'fetchAutorizedData', component: FetchAutorizedDataComponent, canActivate: [AuthGuardService] },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'auth-callback', component: AuthCallbackComponent },
   { path: '**', component: PageNotFoundComponent },
-  { path: 'auth-callback', component: AuthCallbackComponent
-  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
